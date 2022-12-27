@@ -5,6 +5,7 @@ import { route } from './routes/routes';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
+import { Toaster } from 'react-hot-toast';
 
 
 
@@ -17,7 +18,7 @@ function App() {
   return (
     <div className='max-w-[1920px] mx-auto'>
       <RouterProvider router={route}></RouterProvider>
-
+      <Toaster></Toaster>
     </div>
   );
 }

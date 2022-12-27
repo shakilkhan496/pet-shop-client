@@ -1,0 +1,33 @@
+/* .btn-custom {
+    background: #41EAC1;
+    filter: blur(25px);
+    border-radius: 67px;
+} */
+
+
+
+.btn-custom {
+    position: relative;
+    background: #41EAC1;
+    border-radius: 67px;
+
+}
+
+.btn-custom::before,
+.btn-custom::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    background: #41eac028;
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    background-size: 400%;
+    z-index: -1;
+    border-radius: 100px;
+    animation: animate 20s linear infinite;
+}
+
+.btn-custom::before {
+    filter: blur(10px);
+}

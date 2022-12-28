@@ -8,7 +8,7 @@ const Food = () => {
 
     const { data: foodData = [], isLoading, refetch } = useQuery({
         queryKey: ['myProducts'],
-        queryFn: () => fetch(`http://localhost:5000/foods`, {
+        queryFn: () => fetch(` https://pet-shop-server.vercel.app/foods`, {
             headers: {
                 authorization: `bearer ${localStorage.getItem('token')}`
             }

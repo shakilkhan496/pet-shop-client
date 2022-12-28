@@ -5,7 +5,7 @@ const useBuyer = email => {
     const [isUserLoading, setIsUserLoading] = useState(true);
     useEffect(() => {
         if (email) {
-            fetch(`http://localhost:5000/users/buyer/${email}`)
+            fetch(` https://pet-shop-server.vercel.app/users/buyer/${email}`)
                 .then(res => res.json())
                 .then(data => {
                     if (data.isUser) {

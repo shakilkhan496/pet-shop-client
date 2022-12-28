@@ -4,11 +4,33 @@ import './NavBar.css';
 import logoo from '.././assets/vector/s shape.png'
 import { AuthContext } from '../contexts/AuthProvider';
 import { toast } from 'react-hot-toast';
+import { useEffect } from 'react';
+import useBuyer from '../hooks/useBuyer';
+import useSeller from '../hooks/useSeller';
+import useAdmin from '../hooks/useAdmin';
 
 
 const NavBar = () => {
     const [isMenuCollapsed, setIsMenuCollapsed] = useState(true);
     const { user, logOut } = useContext(AuthContext);
+    const [linkState, setLinkState] = useState('');
+    const [isAdmin] = useAdmin(user?.email);
+    const [isSeller] = useSeller(user?.email);
+    const [isUser] = useBuyer(user?.email);
+
+
+    useEffect(() => {
+        if (isUser) {
+            setLinkState('/dashboard')
+        }
+        if (isAdmin) {
+            setLinkState('/dashboard/allSellers')
+        }
+        if (isSeller) {
+            setLinkState('/dashboard/myProducts')
+        }
+    }, [isSeller, isAdmin, isUser])
+
 
     const toggleMenu = () => {
         setIsMenuCollapsed(!isMenuCollapsed)
@@ -24,14 +46,18 @@ const NavBar = () => {
 
     const menuItems = <>
 
-        <p className='btn-ghost hover:scale-105 btn font-bold normal-case text-sm'><Link>Foods</Link></p>
-        <p className='btn-ghost btn font-bold hover:scale-105 normal-case text-sm'><Link>Hotels</Link></p>
-        <p className='btn-ghost btn font-bold hover:scale-105 normal-case text-sm'><Link>Care</Link></p>
+        <Link to='/food' className='btn-ghost hover:scale-105 btn font-bold normal-case text-sm'>Foods</Link>
+        <Link className='btn-ghost btn font-bold hover:scale-105 normal-case text-sm' to='/hotels'>Hotels</Link>
+        <Link className='btn-ghost btn font-bold hover:scale-105 normal-case text-sm' to='/care' >Care</Link>
         {
-            !user?.email ?
+            !user?.uid ?
                 <Link to='/login' className='btn bg-gradient-to-t from-primary to-accent text-xl text-white normal-case font-bold hover:scale-105'>Login</Link>
                 :
-                <button onClick={handleLogOut} className='btn bg-gradient-to-t from-primary to-accent text-xl text-white normal-case font-bold hover:scale-105'>Log out</button>
+                <>
+                    <Link className='font-semibold' to={linkState}>Dashboard</Link>
+                    <Link className='text-xs lg:p-4 p-2 sm:w-28 md:mb-2 mb-2 lg:mb-0 font-bold bg-primary rounded-full text-white px-3 mr-2 '>{user?.displayName || 'Admin mode'}</Link>
+                    <button onClick={handleLogOut} className='btn bg-gradient-to-t from-primary to-accent text-xl text-white normal-case font-bold hover:scale-105'>Log out</button>
+                </>
         }
     </>
     const title = <>

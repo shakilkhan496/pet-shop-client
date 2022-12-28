@@ -19,9 +19,9 @@ const ReviewSection = () => {
                 slidesPerView={3}
                 spaceBetween={40}
                 navigation={true} modules={[Navigation]} className="mySwiper">
-                <SwiperSlide className='cursor-grab'>
+                <SwiperSlide className='cursor-grab  transition duration-700'>
 
-                    <div class="mb-12 py-10 md:mb-0 rounded-3xl">
+                    <div class="mb-12 py-10 md:mb-0 rounded-3xl hover:scale-110 transition duration-500">
                         <div class="flex mb-6">
                             <img style={{ width: '80px' }} alt=''
                                 src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg"
@@ -140,9 +140,9 @@ const ReviewSection = () => {
 
 
                 </SwiperSlide>
-                <SwiperSlide className='cursor-grab'>
+                <SwiperSlide className='cursor-grab  transition duration-700'>
 
-                    <div class="mb-12 py-10 md:mb-0 rounded-3xl">
+                    <div class="mb-12 py-10 md:mb-0 rounded-3xl hover:scale-110 transition duration-500">
                         <div class="flex mb-6">
                             <img style={{ width: '80px' }} alt=''
                                 src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg"
@@ -261,9 +261,9 @@ const ReviewSection = () => {
 
 
                 </SwiperSlide>
-                <SwiperSlide className='cursor-grab'>
+                <SwiperSlide className='cursor-grab  transition duration-700'>
 
-                    <div class="mb-12 py-10 md:mb-0 rounded-3xl">
+                    <div class="mb-12 py-10 md:mb-0 rounded-3xl hover:scale-110 transition duration-500">
                         <div class="flex mb-6">
                             <img style={{ width: '80px' }} alt=''
                                 src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg"
@@ -382,9 +382,9 @@ const ReviewSection = () => {
 
 
                 </SwiperSlide>
-                <SwiperSlide className='cursor-grab'>
+                <SwiperSlide className='cursor-grab  transition duration-700'>
 
-                    <div class="mb-12 py-10 md:mb-0 rounded-3xl">
+                    <div class="mb-12 py-10 md:mb-0 rounded-3xl hover:scale-110 transition duration-500">
                         <div class="flex mb-6">
                             <img style={{ width: '80px' }} alt=''
                                 src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg"
@@ -503,9 +503,9 @@ const ReviewSection = () => {
 
 
                 </SwiperSlide>
-                <SwiperSlide className='cursor-grab'>
+                <SwiperSlide className='cursor-grab  transition duration-700'>
 
-                    <div class="mb-12 py-10 md:mb-0 rounded-3xl">
+                    <div class="mb-12 py-10 md:mb-0 rounded-3xl hover:scale-110 transition duration-500">
                         <div class="flex mb-6">
                             <img style={{ width: '80px' }} alt=''
                                 src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg"
@@ -624,9 +624,9 @@ const ReviewSection = () => {
 
 
                 </SwiperSlide>
-                <SwiperSlide className='cursor-grab'>
+                <SwiperSlide className='cursor-grab  transition duration-700'>
 
-                    <div class="mb-12 py-10 md:mb-0 rounded-3xl">
+                    <div class="mb-12 py-10 md:mb-0 rounded-3xl hover:scale-110 transition duration-500">
                         <div class="flex mb-6">
                             <img style={{ width: '80px' }} alt=''
                                 src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg"
@@ -745,9 +745,9 @@ const ReviewSection = () => {
 
 
                 </SwiperSlide>
-                <SwiperSlide className='cursor-grab'>
+                <SwiperSlide className='cursor-grab  transition duration-700'>
 
-                    <div class="mb-12 py-10 md:mb-0 rounded-3xl">
+                    <div class="mb-12 py-10 md:mb-0 rounded-3xl hover:scale-110 transition duration-500">
                         <div class="flex mb-6">
                             <img style={{ width: '80px' }} alt=''
                                 src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg"
@@ -866,9 +866,9 @@ const ReviewSection = () => {
 
 
                 </SwiperSlide>
-                <SwiperSlide className='cursor-grab'>
+                <SwiperSlide className='cursor-grab  transition duration-700'>
 
-                    <div class="mb-12 py-10 md:mb-0 rounded-3xl">
+                    <div class="mb-12 py-10 md:mb-0 rounded-3xl hover:scale-110 transition duration-500">
                         <div class="flex mb-6">
                             <img style={{ width: '80px' }} alt=''
                                 src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg"
@@ -987,9 +987,9 @@ const ReviewSection = () => {
 
 
                 </SwiperSlide>
-                <SwiperSlide className='cursor-grab'>
+                <SwiperSlide className='cursor-grab  transition duration-700'>
 
-                    <div class="mb-12 py-10 md:mb-0 rounded-3xl">
+                    <div class="mb-12 py-10 md:mb-0 rounded-3xl hover:scale-110 transition duration-500">
                         <div class="flex mb-6">
                             <img style={{ width: '80px' }} alt=''
                                 src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg"

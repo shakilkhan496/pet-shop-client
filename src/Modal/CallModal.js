@@ -35,9 +35,6 @@ const CallModal = () => {
                 loading ? <Loading></Loading> : */}
 
                             <div className=" ">
-                                <div className="text-center lg:text-left">
-
-                                </div>
                                 <div className="card ">
                                     <h1 className="text-3xl mt-10 text-center  font-semibold">Schedule a Call</h1>
                                     <form onSubmit={handleCall} className='mt-3 space-y-3'>
@@ -47,7 +44,7 @@ const CallModal = () => {
                                         </div>
                                         <div>
                                             <p>Your message</p>
-                                            <textarea name='message' className="textarea textarea-warning" placeholder="Send us your message if you have."></textarea>
+                                            <textarea name='message' className="textarea lg:w-[300px] textarea-warning" placeholder="Send us your message if you have."></textarea>
                                         </div>
                                         <button className='btn btn-primary'>Send</button>
                                     </form>

@@ -6,6 +6,7 @@ import food2 from '../.././assets/foodCat/Rectangle 97 (1).png';
 import food3 from '../.././assets/foodCat/Rectangle 97 (2).png';
 import food4 from '../.././assets/foodCat/Rectangle 97 (3).png';
 import food5 from '../.././assets/foodCat/Rectangle 97.png';
+import { Link } from 'react-router-dom';
 
 const SectionFive = () => {
     return (
@@ -23,9 +24,9 @@ const SectionFive = () => {
                         className="text-7xl hover:-skew-x-6 hover:translate-x-6 text-[#FFC73B] font-bold">Pet Cafe</h1>
                     <p className="py-6 font-semibold text-xl">A cozy place for you to hangout <br /> with friends and pets</p>
                     <button className="px-[50px] btn-five hover:bg-accent hover:scale-110 transition rounded-[67px] normal-case text-xl shadow  h-[60px] w-fit text-white">
-                        <div className='flex'>
+                        <Link to='/food' className='flex'>
                             <h1>Foods & Beverage</h1>
-                        </div>
+                        </Link>
                     </button>
                 </div>
 

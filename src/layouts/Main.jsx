@@ -5,7 +5,7 @@ import NavBar from '../shared/NavBar';
 
 const Main = () => {
     return (
-        <div className='max-w-[1920px] mx-auto'>
+        <div className='max-w-[1440px] mx-auto'>
             <NavBar></NavBar>
             <Outlet></Outlet>
             <Footer></Footer>

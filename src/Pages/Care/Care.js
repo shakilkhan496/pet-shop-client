@@ -38,9 +38,21 @@ const doctorsData = [
 const Care = () => {
     return (
         <div className='p-5'>
-            <section className='lg:flex lg:min-h-screen items-center justify-center'>
-                <div className='flex-1 flex flex-col lg:pl-[145px] justify-around'>
+            <section
+                data-aos="zoom-in"
+                data-aos-easing="linear"
+                data-aos-duration="200"
+                className='lg:flex lg:min-h-screen items-center justify-center'>
+                <div
+
+                    className='flex-1 flex flex-col lg:pl-[145px] justify-around'>
                     <h1
+
+                        data-aos="fade-right"
+                        data-aos-easing="linear"
+                        data-aos-duration="200"
+
+
                         style={{
                             transitionDuration: '.8s'
                         }}
@@ -59,8 +71,17 @@ const Care = () => {
                     <img className='w-[60%] translate-x-[80%] hover:scale-110 transition duration-700 lg:translate-x-[200px]' src={cat} alt="" />
                 </div>
             </section>
-            <section className='mt-10'>
-                <div>
+            <section
+                data-aos="zoom-in"
+                data-aos-easing="linear"
+                data-aos-duration="200"
+                className='mt-10'>
+
+                <div
+                    data-aos="fade-right"
+                    data-aos-easing="linear"
+                    data-aos-duration="500"
+                >
                     <h1 className='text-4xl text-primary text-center font-semibold'>Our heros</h1>
                 </div>
                 <div className='mt-10'>
@@ -69,7 +90,11 @@ const Care = () => {
                             doctorsData.map((doctor, idx) =>
                                 <div className="scale-90">
                                     <div className=" bg-base-200 cursor-help p-5 rounded-2xl shadow-xl hover:shadow-2xl hover:scale-110 transition duration-500">
-                                        <img alt='' src={doctor.img} className="max-w-sm lg:w-[500px] rounded-lg shadow-2xl" />
+                                        <img
+                                            data-aos="zoom-in"
+                                            data-aos-easing="linear"
+                                            data-aos-duration="200"
+                                            alt='' src={doctor.img} className="max-w-sm lg:w-[500px] rounded-lg shadow-2xl" />
                                         <div>
                                             <h1 className="text-4xl font-bold">{doctor.name}</h1>
                                             <p className="py-3 text-black text-xl">{doctor.details}</p>

@@ -17,7 +17,13 @@ const Header = () => {
     // }, 1100);
 
     return (
-        <div className='bg-custom'>
+        <div
+
+            data-aos="zoom-in"
+            data-aos-easing="linear"
+            data-aos-duration="500"
+
+            className='bg-custom'>
             <div className='lg:flex  pt-[150px]'>
                 <div
                     data-aos="fade-up-right"

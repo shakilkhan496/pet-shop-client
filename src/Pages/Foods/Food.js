@@ -20,19 +20,30 @@ const Food = () => {
 
     return (
         <div className='min-h-screen'>
-            <div>
+            <div
+                data-aos="zoom-in"
+                data-aos-easing="linear"
+                data-aos-duration="200"
+            >
                 <div>
 
                 </div>
                 {
                     isLoading ?
                         <Loading></Loading>
+
                         :
-                        <div className='grid gap-0 lg:grid-cols-5 md:grid-cols-3 grid-cols-2 justify-items-center'>
+                        <div className='grid gap-0 transition lg:grid-cols-5 md:grid-cols-3 grid-cols-2 justify-items-center'>
                             {
                                 foodData.map((food, idx) =>
-                                    <div key={idx} className="card lg:w-[300px] lg:h-[400px] lg:scale-75 scale-90 bg-base-100 shadow-xl">
-                                        <figure><img className='lg:h-[200px] h-[200px]' src={food.img} alt="Shoes" /></figure>
+                                    <div
+
+
+
+                                        key={idx} className="card lg:w-[300px] lg:h-[400px] lg:scale-75 scale-90 bg-base-100 shadow-xl">
+                                        <figure><img
+
+                                            className='lg:h-[200px] h-[200px]' src={food.img} alt="Shoes" /></figure>
                                         <div className="card-body hover:scale-110 transition">
                                             <h2 className="card-title text-2xl">
                                                 {food.title}

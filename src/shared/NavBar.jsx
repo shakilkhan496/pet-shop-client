@@ -55,8 +55,26 @@ const NavBar = () => {
                 :
                 <>
                     <Link className='font-semibold' to={linkState}>Dashboard</Link>
-                    <Link className='text-xs lg:p-4 p-2 sm:w-28 md:mb-2 mb-2 lg:mb-0 font-bold bg-primary rounded-full text-white px-3 mr-2 '>{user?.displayName || 'Admin mode'}</Link>
+                    <Link className='text-xs  font-bold bg-primary  text-white px-3 py-3 rounded-2xl '>{user?.displayName || 'Admin mode'}</Link>
+                    <div className="dropdown dropdown-end">
+                        <label tabIndex={0} className="btn bg-black btn-circle ">
+                            <div className="indicator">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                                <span className="badge badge-sm indicator-item bg-red-600">8</span>
+                            </div>
+                        </label>
+                        <div tabIndex={0} className="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow">
+                            <div className="card-body">
+                                <span className="font-bold text-lg">8 Items</span>
+                                <span className="text-info">Subtotal: $999</span>
+                                <div className="card-actions">
+                                    <button className="btn btn-primary btn-block">View cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <button onClick={handleLogOut} className='btn bg-gradient-to-t from-primary to-accent text-xl text-white normal-case font-bold hover:scale-105'>Log out</button>
+
                 </>
         }
     </>

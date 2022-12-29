@@ -73,6 +73,10 @@ const SectionOne = () => {
                                     }
                                 }
 
+                                data-aos="zoom-in"
+                                data-aos-easing="linear"
+                                data-aos-duration="200"
+
                                 key={idx}
                                 className='p-4
                                 hover:skew-x-3

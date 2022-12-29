@@ -134,7 +134,12 @@ const Hotels = () => {
 
     return (
         <div>
-            <div className=''>
+            <div
+
+                data-aos="zoom-in"
+                data-aos-easing="linear"
+                data-aos-duration="200"
+                className=''>
                 <div>
                     <div>
                         <h1 className='text-center py-10 text-4xl font-semibold text-primary'>Find your location here</h1>
@@ -152,7 +157,12 @@ const Hotels = () => {
                         </div>
 
                     </div>
-                    <div className='grid gap-0 lg:grid-cols-3 md:grid-cols-3 grid-cols-2 justify-items-center'>
+                    <div
+
+                        data-aos="zoom-in"
+                        data-aos-easing="linear"
+                        data-aos-duration="200"
+                        className='grid gap-0 lg:grid-cols-3 md:grid-cols-3 grid-cols-2 justify-items-center'>
                         {
                             hotelData.map((hotel, idx) =>
                                 <div key={idx} className="card  lg:scale-75 scale-90 bg-base-100 shadow-xl">

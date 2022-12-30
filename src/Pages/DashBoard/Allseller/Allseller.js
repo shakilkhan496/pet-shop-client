@@ -5,7 +5,7 @@ import toast from 'react-hot-toast';
 const Allseller = () => {
     const { data: allSeller = [], refetch } = useQuery({
         queryKey: ['allSeller'],
-        queryFn: () => fetch(` http://localhost:5000/allSeller`, {
+        queryFn: () => fetch(` https://pet-shop-server.vercel.app/allSeller`, {
             headers: {
                 authorization: `bearer ${localStorage.getItem('token')}`
             }
@@ -16,7 +16,7 @@ const Allseller = () => {
     const handleDelete = (id) => {
         const confirm = window.confirm('Are you sure you want to delete?')
         if (confirm) {
-            fetch(` http://localhost:5000/deleteSeller`, {
+            fetch(` https://pet-shop-server.vercel.app/deleteSeller`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ const Allseller = () => {
     const handleVerify = (id, email) => {
         const confirm = window.confirm('Are you sure you want to verify?')
         if (confirm) {
-            fetch(' http://localhost:5000/verify', {
+            fetch(' https://pet-shop-server.vercel.app/verify', {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -53,7 +53,7 @@ const Allseller = () => {
                     }
                 })
 
-            fetch(' http://localhost:5000/verifyState2', {
+            fetch(' https://pet-shop-server.vercel.app/verifyState2', {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

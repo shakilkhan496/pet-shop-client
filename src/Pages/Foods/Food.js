@@ -13,7 +13,7 @@ const Food = () => {
     const { user } = useContext(AuthContext);
     const { data: foodData = [], isLoading, refetch } = useQuery({
         queryKey: ['myProducts'],
-        queryFn: () => fetch(` http://localhost:5000/foods`, {
+        queryFn: () => fetch(` https://pet-shop-server.vercel.app/foods`, {
             headers: {
                 authorization: `bearer ${localStorage.getItem('token')}`
             }
@@ -26,7 +26,7 @@ const Food = () => {
     const [cart, setCart] = useState({});
     console.log(cart);
     const handleCart = (_id) => {
-        fetch(`http://localhost:5000/foods/${_id}`)
+        fetch(`https://pet-shop-server.vercel.app/foods/${_id}`)
             .then(res => res.json())
             .then(data => {
                 setCart(data)
@@ -39,7 +39,7 @@ const Food = () => {
                     id: cart._id,
                 }
 
-                fetch('http://localhost:5000/cart', {
+                fetch('https://pet-shop-server.vercel.app/cart', {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',

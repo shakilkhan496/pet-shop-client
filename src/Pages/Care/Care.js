@@ -75,6 +75,7 @@ const Care = () => {
                 data-aos="zoom-in"
                 data-aos-easing="linear"
                 data-aos-duration="200"
+
                 className='mt-10'>
 
                 <div

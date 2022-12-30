@@ -1,20 +1,69 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useState } from 'react';
+import { useContext } from 'react';
+import { useEffect } from 'react';
+import { toast } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import Loading from '../../components/Loading/Loading';
+import { AuthContext } from '../../contexts/AuthProvider';
 
 
 const Food = () => {
 
+    const { user } = useContext(AuthContext);
     const { data: foodData = [], isLoading, refetch } = useQuery({
         queryKey: ['myProducts'],
-        queryFn: () => fetch(` https://pet-shop-server.vercel.app/foods`, {
+        queryFn: () => fetch(` http://localhost:5000/foods`, {
             headers: {
                 authorization: `bearer ${localStorage.getItem('token')}`
             }
         })
             .then(res => res.json())
     })
+
+
+
+    const [cart, setCart] = useState({});
+    console.log(cart);
+    const handleCart = (_id) => {
+        fetch(`http://localhost:5000/foods/${_id}`)
+            .then(res => res.json())
+            .then(data => {
+                setCart(data)
+                const cartData = {
+                    email: user.email,
+                    productId: cart._id,
+                    title: cart.title,
+                    price: cart.price,
+                    img: cart.img,
+                    id: cart._id,
+                }
+
+                fetch('http://localhost:5000/cart', {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        authorization: `bearer ${localStorage.getItem('token')}`
+                    }
+                    ,
+                    body: JSON.stringify(cartData)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.acknowledged === true) {
+                            toast.success('Added to cart successfully')
+                            refetch();
+                        }
+                    })
+                    .catch(err => {
+                        toast.error(`${err}`)
+                    })
+
+            })
+
+
+
+    }
 
 
 
@@ -50,8 +99,8 @@ const Food = () => {
                                             </h2>
                                             <p className='font-semibold'>{food.description}</p>
                                             <p className='text-primary font-bold'>Price : {food.price} $</p>
-                                            <button className='btn btn-sm bg-secondary text-black hover:text-white'>Add to Cart</button>
-                                            <Link to={food.title} className='btn btn-sm bg-primary mt-2 text-white hover:text-white'>See details</Link>
+                                            <button onClick={() => handleCart(food._id)} className='btn btn-sm bg-secondary text-black hover:text-white'>Add to Cart</button>
+                                            <Link to={food._id} className='btn btn-sm bg-primary mt-2 text-white hover:text-white'>See details</Link>
 
                                             <div className="card-actions justify-end">
                                                 <div className="badge badge-outline">Cat food</div>

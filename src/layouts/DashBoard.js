@@ -45,7 +45,10 @@ const DashBoard = () => {
 
                         {
                             isUser &&
-                            <li><Link to={`/dashboard`} className='btn  hover:outline-primary btn-ghost'>My orders</Link></li>
+                            <>
+                                <li><Link to={`/dashboard`} className='btn  hover:outline-primary btn-ghost'>My orders</Link></li>
+                                <li><Link to={`/dashboard/cart`} className='btn  hover:outline-primary btn-ghost'>My Cart</Link></li>
+                            </>
                         }
                     </ul>
 

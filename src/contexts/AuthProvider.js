@@ -1,3 +1,4 @@
+import { useQuery } from '@tanstack/react-query';
 import { getAuth, updateProfile } from 'firebase/auth';
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth'
 import React from 'react';
@@ -54,6 +55,11 @@ const AuthProvider = ({ children }) => {
         return () => unsubscribe();
     }, [user])
 
+    const [payPrice, setPayPrice] = useState(0);
+
+    const [cartLength, setCartLength] = useState(0);
+
+
 
     const authInfo = {
         user,
@@ -63,7 +69,8 @@ const AuthProvider = ({ children }) => {
         emailSignIn,
         googleSignIn,
         createUser,
-        updateUserProfile
+        updateUserProfile, payPrice, setPayPrice,
+        cartLength, setCartLength
 
 
     }

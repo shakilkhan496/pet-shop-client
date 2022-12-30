@@ -23,3 +23,75 @@
 .btn-five::before {
     filter: blur(10px);
 }
+
+.swiper-wrapper {
+    padding: 40px;
+}
+
+.s {
+    box-shadow: inset 0px 0px 40px #ffc73b;
+    border-radius: 24px;
+}
+
+.swiper-slide {
+    box-shadow: 0px 0px 30px #a46dc7;
+    transition: .5s;
+}
+
+section.bg-white.hidden.lg\:block.md\:block.p-5.rounded-3xl.shadow-lg.pt-5.aos-init.aos-animate {
+    background: #ffe4b2;
+    box-shadow: 0px 0px 20px #e7acec;
+}
+
+.react-calendar {
+    background: linear-gradient(77deg, #dba3ff, #ffc73b) !important;
+    border-radius: 30px 30px 0px 0px;
+}
+
+.react-calendar__tile--active {
+    background: #006edc;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+span.react-calendar__navigation__label__labelText.react-calendar__navigation__label__labelText--from {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.modal-box.lg\:max-w-full.w-\[90\%\].lg\:w-\[70\%\].relative {
+    background: linear-gradient(330deg, #a46dc747, #ffc73b24);
+    border-radius: 86px 0px 0px 86px;
+}
+
+.modal.backdrop-blur {
+    background: linear-gradient(169deg, #ffc73b3b, #a46dc787);
+}
+
+.bg-base-200.cursor-help.p-5.rounded-2xl.shadow-xl.hover\:shadow-2xl.hover\:scale-110.transition.duration-500 {
+    background: linear-gradient(215deg, #a46dc786, #ffc73b);
+    box-shadow: 0px 0px 50px 10px #ef6b9f;
+}
+
+
+
+
+section.lg\:flex.lg\:min-h-screen {
+    background: linear-gradient(270deg, #FFC73B 0%, #ffbcbc30 53.29%, #dda5ff00 102.74%);
+    border-radius: 150px 230px 773px 246px !important;
+}
+
+.grid.lg\:grid-cols-2.lg\:scale-75.justify-items-center {
+    background: linear-gradient(280deg, #FFC73B 0%, #ffbcbc6b 53.29%, #dda5ff00 102.74%);
+    padding: 50px;
+    border-radius: 737px 100px 100px 100px;
+}
+
+
+
+@media only screen and (max-width:767px) {
+    .chat-bubble.bg-primary.text-white.text-xl {
+        margin-right: 200px;
+    }
+}

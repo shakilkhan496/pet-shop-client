@@ -1,22 +1,25 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
+import { useContext } from 'react';
 import toast from 'react-hot-toast';
+import { AuthContext } from '../../contexts/AuthProvider';
 
 
 const CheckOut = ({ paymentData }) => {
-    const { buyerName, buyerEmail, _id, productName } = paymentData;
+    const { img, _id, title } = paymentData;
+    const { user, payPrice } = useContext(AuthContext);
     const stripe = useStripe();
     const elements = useElements();
     const [cardErr, serCardErr] = useState('');
     const [success, setsuccess] = useState('');
     const [txnId, setTxnId] = useState('');
-    const price = paymentData.resalePrice;
+    const price = payPrice;
 
     const [clientSecret, setClientSecret] = useState("");
 
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
-        fetch(" https://pet-shop-server.vercel.app/create-payment-intent", {
+        fetch(" http://localhost:5000/create-payment-intent", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -68,8 +71,8 @@ const CheckOut = ({ paymentData }) => {
                 payment_method: {
                     card: card,
                     billing_details: {
-                        name: buyerName,
-                        email: buyerEmail,
+                        name: user.displayName,
+                        email: user.email,
                     },
                 },
             },
@@ -83,18 +86,20 @@ const CheckOut = ({ paymentData }) => {
         }
         const paymentInfo = {
             price,
-            buyerEmail,
-            buyerName,
+            email: user.email,
+            name: user.displayName,
             transactionId: paymentIntent.id,
             orderId: _id,
-            productName
+            title,
+            status: 'paid',
+            img
         }
 
         toast.success('Payment successful');
         if (paymentIntent.status === 'succeeded') {
             setsuccess('Congratulations!!! Your payment was successful');
             setTxnId(paymentIntent.id);
-            fetch(' https://pet-shop-server.vercel.app/payments', {
+            fetch(' http://localhost:5000/payments', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

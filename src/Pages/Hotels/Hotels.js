@@ -151,11 +151,14 @@ const Hotels = () => {
                         </div>
                         <div>
                             <div className="chat chat-end ">
-                                <div className="chat-bubble bg-primary lg:-translate-x-[350px] text-xl text-white lg:translate-y-[100px]">Looking for hotel for me?</div>
+                                <div className="chat-bubble bg-primary lg:-translate-x-[350px] text-xl text-white lg:translate-y-[100px]">Looking hotel <br /> for me?</div>
                             </div>
                             <img className='lg:translate-x-[200px] lg:translate-y-[100px] hover:scale-105 transition duration-500' src={cat} alt="" />
                         </div>
 
+                    </div>
+                    <div>
+                        <h1 className='text-center py-10 text-4xl font-semibold text-primary'>Hotels</h1>
                     </div>
                     <div
 

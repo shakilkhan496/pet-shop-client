@@ -10,7 +10,9 @@ import MyOrders from "../Pages/DashBoard/My Orders/MyOrders";
 import MyProducts from "../Pages/DashBoard/MyProducts/MyProducts";
 import Payment from "../Pages/DashBoard/Payment/Payment";
 import ReportedItems from "../Pages/DashBoard/ReportedItems/ReportedItems";
+import Cart from "../Pages/Foods/Cart";
 import Food from "../Pages/Foods/Food";
+import FoodDetails from "../Pages/Foods/FoodDetails";
 import Home from "../Pages/Home/Home";
 import Hotels from "../Pages/Hotels/Hotels";
 import Login from "../Pages/Registration/Login";
@@ -55,6 +57,18 @@ export const route = createBrowserRouter([
                 path: '/care',
                 element: <Care></Care>
             }
+            ,
+            {
+                path: '/food/:id',
+                element: <FoodDetails></FoodDetails>,
+                loader: ({ params }) => fetch(`http://localhost:5000/foods/${params.id}`)
+            }
+            ,
+            {
+                path: '/food/payment/:id',
+                element: <PrivateRoute><Payment></Payment></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/food/payment/${params.id}`)
+            }
         ]
     }
     ,
@@ -66,6 +80,11 @@ export const route = createBrowserRouter([
             {
                 path: '/dashboard',
                 element: <MyOrders></MyOrders>
+            }
+            ,
+            {
+                path: '/dashboard/cart',
+                element: <Cart></Cart>
             }
             ,
             {
@@ -92,7 +111,7 @@ export const route = createBrowserRouter([
             {
                 path: 'dashboard/payment/:id',
                 element: <BuyerRoute><Payment></Payment></BuyerRoute>,
-                loader: ({ params }) => fetch(` https://pet-shop-server.vercel.app/orders/${params.id}`)
+                loader: ({ params }) => fetch(` http://localhost:5000/payment/${params.id}`)
             }
         ]
     }

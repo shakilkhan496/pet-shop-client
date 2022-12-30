@@ -56,20 +56,21 @@ const Header = () => {
                 </div>
                 <div
 
-                    className=' flex-1'>
+                    className=' lg:flex-1'>
                     <img
 
                         style={{
                             transitionDuration: '1s'
                         }}
                         className='lg:relative lg:top-5
+                        pl-[25px]
                      hover:skew-x-12 hover:translate-y-11 hover:transition hover:translate-x-[-100px]
                      hidden lg:block' src={vector} alt="" />
                     <img
                         style={{
                             transitionDuration: '1s'
                         }}
-                        className='lg:translate-x-0 md:w-[400px] md:translate-x-[365px] hover:scale-110 hover:-translate-x-5' src={cat} alt="" />
+                        className='lg:translate-x-0 md:w-[400px] md:translate-x-[365px] lg:pt-[35px] hover:scale-110 hover:-translate-x-5' src={cat} alt="" />
                 </div>
             </div>
 

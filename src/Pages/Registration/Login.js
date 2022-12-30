@@ -59,7 +59,7 @@ const Login = () => {
                     email: user.email,
                     slot: 'user'
                 }
-                fetch(' https://pet-shop-server.vercel.app/users', {
+                fetch(' http://localhost:5000/users', {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json'

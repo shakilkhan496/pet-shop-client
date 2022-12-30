@@ -1,26 +1,46 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
+import { toast } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../../../contexts/AuthProvider';
+import { AuthContext } from '../../contexts/AuthProvider';
 
 
-const MyOrders = () => {
+const Cart = () => {
     const { user } = useContext(AuthContext);
-    const { data: myOrders = [] } = useQuery({
-        queryKey: ['myOrders'],
-        queryFn: () => fetch(`http://localhost:5000/myOrders?email=${user.email}`, {
+    const { data: myCart = [], refetch } = useQuery({
+        queryKey: ['myCart'],
+        queryFn: () => fetch(`http://localhost:5000/cart?email=${user.email}`, {
             headers: {
                 authorization: `bearer ${localStorage.getItem('token')}`
             }
         })
             .then(res => res.json())
     })
-    console.log(myOrders)
+    console.log(myCart)
+
+    const handleDelete = (id) => {
+        fetch(`http://localhost:5000/deleteOne?id=${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+
+            body: JSON.stringify({ id })
+        }
+        )
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount > 0) {
+                    refetch()
+                    toast.success('Removed from cart')
+                }
+            })
+    }
 
     return (
         <div>
             <div>
-                <h1 className='text-2xl   font-bold p-10'>My orders</h1>
+                <h1 className='text-2xl   font-bold p-10'>My Cart</h1>
             </div>
             <div>
                 <div className="overflow-x-auto w-full">
@@ -36,14 +56,14 @@ const MyOrders = () => {
                                 <th>Product</th>
                                 <th>Title</th>
                                 <th>Price</th>
-                                <th>Payment status</th>
-                                <th></th>
+                                <th>Take action</th>
+                                <th> Delete </th>
                             </tr>
                         </thead>
                         <tbody>
 
                             {
-                                myOrders?.map((myOrder, idx) => <tr key={idx}>
+                                myCart?.map((myOrder, idx) => <tr key={idx}>
                                     <th>
                                         <label>
                                             {idx + 1}
@@ -63,7 +83,10 @@ const MyOrders = () => {
                                     </td>
                                     <td className='font-semibold text-xl text-primary'>{myOrder.price} $</td>
                                     <th>
-                                        {myOrder.status}
+                                        <Link to={`/food/${myOrder.id}`}>See details</Link>
+                                    </th>
+                                    <th>
+                                        <button onClick={() => handleDelete(myOrder._id)} className='btn btn-xs bg-red-500 text-white'>Delete</button>
                                     </th>
                                 </tr>)
                             }
@@ -79,4 +102,4 @@ const MyOrders = () => {
     );
 };
 
-export default MyOrders;
+export default Cart;

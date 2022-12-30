@@ -51,13 +51,23 @@ const SectionTwo = () => {
                             transitionDuration: '.8s'
                         }}
                         className='flex-1 transition hover:scale-110 hover:translate-x-10 hover:skew-x-6'>
-                        <h1 className='secTwo-title md:text-center lg:text-left mt-10 lg:text-6xl text-5xl'>Proper Food <br /> For your <br /> Pets</h1>
+                        <h1
+
+                            data-aos="zoom-in"
+                            data-aos-easing="linear"
+                            data-aos-duration="200"
+                            className='secTwo-title md:text-center lg:text-left mt-10 lg:text-6xl text-5xl'>Proper Food <br /> For your <br /> Pets</h1>
                     </div>
                     <div
 
                         className='flex-1 lg:flex-col md:flex md:justify-around '>
-                        <img style={{ transitionDuration: '.8s' }} className='w-[240px] shadow-2xl hover:scale-110 transition hover:-translate-x-20 imgOne' src={dogEating} alt="" />
-                        <img style={{ transitionDuration: '.8s' }} className='w-[240px] mt-5 md:mt-0  shadow-xl imgTwo lg:-mt-[100px] lg:ml-[20%] hover:scale-110 transition hover:translate-x-20 ' src={catEating} alt="" />
+                        <img
+
+
+                            style={{ transitionDuration: '.8s' }} className='w-[240px] shadow-2xl hover:scale-110 transition hover:-translate-x-20 imgOne' src={dogEating} alt="" />
+                        <img
+
+                            style={{ transitionDuration: '.8s' }} className='w-[240px] mt-5 md:mt-0  shadow-xl imgTwo lg:-mt-[100px] lg:ml-[20%] hover:scale-110 transition hover:translate-x-20 ' src={catEating} alt="" />
                     </div>
 
                 </section>
@@ -65,7 +75,7 @@ const SectionTwo = () => {
                     data-aos="zoom-in"
                     data-aos-easing="linear"
                     data-aos-duration="800"
-                    className='bg-white hidden lg:block md:block p-5 rounded-3xl shadow-lg pt-5'>
+                    className='bg-white hidden lg:block md:block rounded-3xl shadow-lg '>
                     <Swiper
                         slidesPerView={4}
                         spaceBetween={30}
@@ -73,15 +83,18 @@ const SectionTwo = () => {
                             clickable: true,
                         }}
                         // modules={[Pagination]}
-                        className="mySwiper"
+                        className="mySwiper cursor-grab s"
                     >
                         {
                             brands.map((x, idx) =>
-                                <SwiperSlide className='shadow-xl p-5 hover:shadow-2xl'
+                                <SwiperSlide className='shadow-xl  hover:shadow-2xl'
                                     key={idx}
 
                                 >
                                     <img
+                                        data-aos="zoom-in"
+                                        data-aos-easing="linear"
+                                        data-aos-duration="200"
                                         style={{
                                             transitionDuration: '.8s'
                                         }}

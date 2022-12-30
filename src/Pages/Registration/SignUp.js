@@ -46,7 +46,7 @@ const SignUp = () => {
                 toast.success(`Signed up as ${user.email}`)
                 form.reset();
 
-                fetch(' https://pet-shop-server.vercel.app/users', {
+                fetch(' http://localhost:5000/users', {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json'

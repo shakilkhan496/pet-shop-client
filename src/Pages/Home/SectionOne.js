@@ -73,9 +73,7 @@ const SectionOne = () => {
                                     }
                                 }
 
-                                data-aos="zoom-in"
-                                data-aos-easing="linear"
-                                data-aos-duration="200"
+
 
                                 key={idx}
                                 className='p-4
@@ -85,15 +83,29 @@ const SectionOne = () => {
                                  shadow hover:shadow-2xl transition rounded-3xl'>
                                 <div className='flex items-center space-x-4'>
                                     <div>
-                                        <img style={{
-                                            transitionDuration: '1s'
-                                        }} className='rounded-full hover:rotate-45 transition' src={pet.img} alt="" />
+                                        <img
+                                            data-aos="zoom-in"
+                                            data-aos-easing="linear"
+                                            data-aos-duration="200"
+
+                                            style={{
+                                                transitionDuration: '1s'
+                                            }} className='rounded-full hover:rotate-45 transition' src={pet.img} alt="" />
                                     </div>
-                                    <div>
+                                    <div
+                                        data-aos="zoom-in"
+                                        data-aos-easing="linear"
+                                        data-aos-duration="200"
+                                    >
                                         <h3 className='text-[30px] font-semibold text-accent text-center'>{pet.title}</h3>
                                     </div>
                                 </div>
-                                <div className='mt-3'>
+                                <div className='mt-3'
+
+                                    data-aos="zoom-in"
+                                    data-aos-easing="linear"
+                                    data-aos-duration="200"
+                                >
                                     <p className='text-[20px]'>{pet.des}</p>
                                 </div>
                             </div>

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useContext } from 'react';
 import { useEffect } from 'react';
 import { toast } from 'react-hot-toast';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Loading from '../../components/Loading/Loading';
 import { AuthContext } from '../../contexts/AuthProvider';
 
@@ -11,9 +11,10 @@ import { AuthContext } from '../../contexts/AuthProvider';
 const Food = () => {
 
     const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
     const { data: foodData = [], isLoading, refetch } = useQuery({
         queryKey: ['myProducts'],
-        queryFn: () => fetch(` https://pet-shop-server.vercel.app/foods`, {
+        queryFn: () => fetch(` http://localhost:5000/foods`, {
             headers: {
                 authorization: `bearer ${localStorage.getItem('token')}`
             }
@@ -26,12 +27,12 @@ const Food = () => {
     const [cart, setCart] = useState({});
     console.log(cart);
     const handleCart = (_id) => {
-        fetch(`https://pet-shop-server.vercel.app/foods/${_id}`)
+        fetch(`http://localhost:5000/foods/${_id}`)
             .then(res => res.json())
             .then(data => {
                 setCart(data)
                 const cartData = {
-                    email: user.email,
+                    email: user?.email,
                     productId: cart._id,
                     title: cart.title,
                     price: cart.price,
@@ -39,25 +40,33 @@ const Food = () => {
                     id: cart._id,
                 }
 
-                fetch('https://pet-shop-server.vercel.app/cart', {
-                    method: 'PUT',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        authorization: `bearer ${localStorage.getItem('token')}`
-                    }
-                    ,
-                    body: JSON.stringify(cartData)
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        if (data.acknowledged === true) {
-                            toast.success('Added to cart successfully')
-                            refetch();
+                if (user?.email) {
+                    fetch('http://localhost:5000/cart', {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            authorization: `bearer ${localStorage.getItem('token')}`
                         }
+                        ,
+                        body: JSON.stringify(cartData)
                     })
-                    .catch(err => {
-                        toast.error(`${err}`)
-                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.acknowledged === true) {
+                                toast.success('Added to cart successfully')
+                                refetch();
+                            }
+                            return
+                        })
+                        .catch(err => {
+                            toast.error(`${err}`)
+                        })
+
+                }
+                else {
+                    toast.error(`You must need to login to add to cart`)
+                    navigate('/login')
+                }
 
             })
 

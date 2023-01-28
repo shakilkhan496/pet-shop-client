@@ -19,7 +19,7 @@ const CheckOut = ({ paymentData }) => {
 
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
-        fetch(" https://pet-shop-server.vercel.app/create-payment-intent", {
+        fetch(" http://localhost:5000/create-payment-intent", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -99,7 +99,7 @@ const CheckOut = ({ paymentData }) => {
         if (paymentIntent.status === 'succeeded') {
             setsuccess('Congratulations!!! Your payment was successful');
             setTxnId(paymentIntent.id);
-            fetch(' https://pet-shop-server.vercel.app/payments', {
+            fetch(' http://localhost:5000/payments', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

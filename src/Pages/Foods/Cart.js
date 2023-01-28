@@ -9,7 +9,7 @@ const Cart = () => {
     const { user } = useContext(AuthContext);
     const { data: myCart = [], refetch } = useQuery({
         queryKey: ['myCart'],
-        queryFn: () => fetch(`https://pet-shop-server.vercel.app/cart?email=${user.email}`, {
+        queryFn: () => fetch(`http://localhost:5000/cart?email=${user.email}`, {
             headers: {
                 authorization: `bearer ${localStorage.getItem('token')}`
             }
@@ -19,7 +19,7 @@ const Cart = () => {
     console.log(myCart)
 
     const handleDelete = (id) => {
-        fetch(`https://pet-shop-server.vercel.app/deleteOne?id=${id}`, {
+        fetch(`http://localhost:5000/deleteOne?id=${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',

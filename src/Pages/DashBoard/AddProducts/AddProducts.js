@@ -44,7 +44,7 @@ const AddProducts = () => {
                 }
                 console.log(productsData)
 
-                fetch(' https://pet-shop-server.vercel.app/addProduct', {
+                fetch(' http://localhost:5000/addProduct', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

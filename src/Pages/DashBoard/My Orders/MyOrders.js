@@ -8,7 +8,7 @@ const MyOrders = () => {
     const { user } = useContext(AuthContext);
     const { data: myOrders = [] } = useQuery({
         queryKey: ['myOrders'],
-        queryFn: () => fetch(`https://pet-shop-server.vercel.app/myOrders?email=${user.email}`, {
+        queryFn: () => fetch(`http://localhost:5000/myOrders?email=${user.email}`, {
             headers: {
                 authorization: `bearer ${localStorage.getItem('token')}`
             }

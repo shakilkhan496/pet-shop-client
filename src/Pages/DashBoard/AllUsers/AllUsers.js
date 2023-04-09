@@ -5,7 +5,7 @@ import toast from 'react-hot-toast';
 const AllUsers = () => {
     const { data: allUser = [], refetch } = useQuery({
         queryKey: ['allUser'],
-        queryFn: () => fetch(` http://localhost:5000/allUser`, {
+        queryFn: () => fetch(` https://pet-shop-server.vercel.app/allUser`, {
             headers: {
                 authorization: `bearer ${localStorage.getItem('token')}`
             }
@@ -16,7 +16,7 @@ const AllUsers = () => {
     const handleDelete = (id) => {
         const confirm = window.confirm('Are you sure you want to delete?')
         if (confirm) {
-            fetch(` http://localhost:5000/deleteUser`, {
+            fetch(` https://pet-shop-server.vercel.app/deleteUser`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',

@@ -49,7 +49,7 @@ const NavBar = () => {
 
     const { data: myCart = [], refetch } = useQuery({
         queryKey: ['myCart'],
-        queryFn: () => fetch(`http://localhost:5000/cart?email=${user.email}`, {
+        queryFn: () => fetch(`https://pet-shop-server.vercel.app/cart?email=${user.email}`, {
             headers: {
                 authorization: `bearer ${localStorage.getItem('token')}`
             }

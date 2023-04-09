@@ -4,7 +4,7 @@ const useToken = (email) => {
     console.log(email);
     const [token, setToken] = useState('');
     useEffect(() => {
-        fetch(` http://localhost:5000/jwt?email=${email}`)
+        fetch(` https://pet-shop-server.vercel.app/jwt?email=${email}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data.token);

@@ -61,13 +61,13 @@ export const route = createBrowserRouter([
             {
                 path: '/food/:id',
                 element: <FoodDetails></FoodDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/foods/${params.id}`)
+                loader: ({ params }) => fetch(`https://pet-shop-server.vercel.app/foods/${params.id}`)
             }
             ,
             {
                 path: '/food/payment/:id',
                 element: <PrivateRoute><Payment></Payment></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/food/payment/${params.id}`)
+                loader: ({ params }) => fetch(`https://pet-shop-server.vercel.app/food/payment/${params.id}`)
             }
         ]
     }
@@ -111,7 +111,7 @@ export const route = createBrowserRouter([
             {
                 path: 'dashboard/payment/:id',
                 element: <BuyerRoute><Payment></Payment></BuyerRoute>,
-                loader: ({ params }) => fetch(` http://localhost:5000/payment/${params.id}`)
+                loader: ({ params }) => fetch(` https://pet-shop-server.vercel.app/payment/${params.id}`)
             }
         ]
     }

@@ -6,12 +6,14 @@ import { toast } from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import Loading from '../../components/Loading/Loading';
 import { AuthContext } from '../../contexts/AuthProvider';
+import useAdmin from '../../hooks/useAdmin';
 
 
 const Food = () => {
 
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
+    const [isAdmin] = useAdmin(user?.email);
     const { data: foodData = [], isLoading, refetch } = useQuery({
         queryKey: ['myProducts'],
         queryFn: () => fetch(` http://localhost:5000/foods`, {
@@ -108,7 +110,7 @@ const Food = () => {
                                             </h2>
                                             <p className='font-semibold'>{food.description}</p>
                                             <p className='text-primary font-bold'>Price : {food.price} $</p>
-                                            <button onClick={() => handleCart(food._id)} className='btn btn-sm bg-secondary text-black hover:text-white'>Add to Cart</button>
+                                            <button disabled={isAdmin} onClick={() => handleCart(food._id)} className='btn btn-sm bg-secondary text-black hover:text-white'>Add to Cart</button>
                                             <Link to={food._id} className='btn btn-sm bg-primary mt-2 text-white hover:text-white'>See details</Link>
 
                                             <div className="card-actions justify-end">

@@ -40,7 +40,8 @@ const NavBar = () => {
     const handleLogOut = () => {
         logOut()
             .then(() => {
-                toast.success('Logged out')
+                localStorage.removeItem('token');
+                toast.success('Logged out');
             })
     }
 

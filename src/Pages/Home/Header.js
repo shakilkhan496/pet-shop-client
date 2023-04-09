@@ -19,9 +19,7 @@ const Header = () => {
     return (
         <div
 
-            data-aos="zoom-in"
-            data-aos-easing="linear"
-            data-aos-duration="500"
+
 
             className='bg-custom'>
             <div className='lg:flex  pt-[150px]'>
@@ -63,7 +61,7 @@ const Header = () => {
                             transitionDuration: '1s'
                         }}
                         className='lg:relative lg:top-5
-                        pl-[25px]
+                        pl-[40px]
                      hover:skew-x-12 hover:translate-y-11 hover:transition hover:translate-x-[-100px]
                      hidden lg:block' src={vector} alt="" />
                     <img

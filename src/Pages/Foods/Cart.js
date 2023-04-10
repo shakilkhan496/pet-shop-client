@@ -73,17 +73,17 @@ const Cart = () => {
                                         <div className="flex items-center space-x-3">
                                             <div className="avatar">
                                                 <div className="mask  w-16 h-16">
-                                                    <img src={myOrder.img} alt="Avatar Tailwind CSS Component" />
+                                                    <img src={myOrder.data.img} alt="Avatar Tailwind CSS Component" />
                                                 </div>
                                             </div>
                                         </div>
                                     </td>
                                     <td>
-                                        <p className='text-xl font-semibold  '>{myOrder.title}</p>
+                                        <p className='text-xl font-semibold  '>{myOrder.data.title}</p>
                                     </td>
-                                    <td className='font-semibold text-xl text-primary'>{myOrder.price} $</td>
+                                    <td className='font-semibold text-xl text-primary'>{myOrder.data.price} $</td>
                                     <th>
-                                        <Link to={`/food/${myOrder.id}`}>See details</Link>
+                                        <Link to={`/food/${myOrder.data.id}`}>See details</Link>
                                     </th>
                                     <th>
                                         <button onClick={() => handleDelete(myOrder._id)} className='btn btn-xs bg-red-500 text-white'>Delete</button>

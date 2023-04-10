@@ -1,5 +1,4 @@
-import { useQuery } from '@tanstack/react-query';
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { AuthContext } from '../contexts/AuthProvider';
 import useAdmin from '../hooks/useAdmin';
@@ -8,10 +7,11 @@ import useSeller from '../hooks/useSeller';
 import useTitle from '../hooks/useTitle';
 import Footer from '../shared/Footer';
 import NavBar from '../shared/NavBar';
+import Loading from '../components/Loading/Loading';
 
 const DashBoard = () => {
     useTitle('Dashboard');
-    const { user } = useContext(AuthContext);
+    const { user, loading } = useContext(AuthContext);
     const [isAdmin] = useAdmin(user.email);
     const [isSeller] = useSeller(user.email);
     const [isUser] = useBuyer(user.email);
@@ -26,6 +26,9 @@ const DashBoard = () => {
                 <div className="drawer-side">
                     <label htmlFor="dashboard" className="drawer-overlay"></label>
                     <ul className="menu p-4 lg:w-60 w-40 bg-white text-black  ">
+                        {
+                            loading === !false && <Loading></Loading>
+                        }
                         {
                             isAdmin && <>
                                 <li><Link to={`/dashboard/allSellers`} className='btn  hover:outline-primary btn-ghost'>All Sellers</Link></li>

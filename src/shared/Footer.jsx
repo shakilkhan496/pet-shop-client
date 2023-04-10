@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <footer
 
-            className="footer rounded-tr-[200px] grid-rows-2 p-10 pl-[250px] bg-black  text-neutral-content">
+            className="footer rounded-tr-[200px] grid-rows-2 p-10 lg:pl-[250px] bg-black  text-neutral-content">
             <div className='flex items-center justify-center'>
                 <div className='flex img'>
                     <img className='w-16 -rotate-90 translate-x-4' src={logoo} alt="" />

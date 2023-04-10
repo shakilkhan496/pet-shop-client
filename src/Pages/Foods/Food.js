@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { useState } from 'react';
+import React from 'react';
 import { useContext } from 'react';
 import { toast } from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
@@ -11,7 +11,7 @@ import { PhotoView } from 'react-photo-view';
 
 const Food = () => {
 
-    const { user } = useContext(AuthContext);
+    const { user, cartData } = useContext(AuthContext);
     const navigate = useNavigate();
     const [isAdmin] = useAdmin(user?.email);
     const { data: foodData = [], isLoading, refetch } = useQuery({
@@ -24,23 +24,22 @@ const Food = () => {
             .then(res => res.json())
     })
 
+    console.log('This is top cart data', cartData)
 
 
-    const [cart, setCart] = useState({});
-    console.log(cart);
+
+
+
+
+
+
+
     const handleCart = (_id) => {
         fetch(`https://pet-shop-server.vercel.app/foods/${_id}`)
             .then(res => res.json())
             .then(data => {
-                setCart(data)
-                const cartData = {
-                    email: user?.email,
-                    productId: cart._id,
-                    title: cart.title,
-                    price: cart.price,
-                    img: cart.img,
-                    id: cart._id,
-                }
+                // setCart(data)
+
 
                 if (user?.email) {
                     fetch('https://pet-shop-server.vercel.app/cart', {
@@ -50,13 +49,16 @@ const Food = () => {
                             authorization: `bearer ${localStorage.getItem('token')}`
                         }
                         ,
-                        body: JSON.stringify(cartData)
+                        body: JSON.stringify({ data, email: user.email })
+
                     })
                         .then(res => res.json())
                         .then(data => {
                             if (data.acknowledged === true) {
                                 toast.success('Added to cart successfully')
+                                console.log('This is cart item', cartData);
                                 refetch();
+
                             }
                             return
                         })
@@ -79,7 +81,7 @@ const Food = () => {
 
 
     return (
-        <div className='min-h-screen'>
+        <div className='min-h-screen px-7'>
             <div
 
             >
@@ -91,7 +93,7 @@ const Food = () => {
                         <Loading></Loading>
 
                         :
-                        <div className='grid gap-0 transition lg:grid-cols-5 md:grid-cols-3 grid-cols-2 justify-items-center'>
+                        <div className='lg:grid md:grid gap-0 transition lg:grid-cols-5 md:grid-cols-3 grid-cols-1 justify-items-center'>
                             {
                                 foodData.map((food, idx) =>
                                     <div

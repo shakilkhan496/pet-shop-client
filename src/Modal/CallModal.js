@@ -66,28 +66,28 @@ export default CallModal;
 
 
 
-{/* <form onSubmit={handleSubmit} className="card-body lg:w-96">
-    <div className="form-control">
-        <label className="label">
-            <span className="label-text">Email</span>
-        </label>
-        <input name='email' type="email" placeholder="email" className="input input-bordered" />
-    </div>
-    <div className="form-control">
-        <label className="label">
-            <span className="label-text">Password</span>
-        </label>
-        <input name='password' type="password" placeholder="password" className="input input-bordered" />
-    </div>
-    <div className='text-sm '>
-        <p>New to our website?</p> <p className='text-primary pt-5 hover:link   ' ><Link className='animate-pulse text-2xl ' to='/signup'>Register now</Link></p>
-    </div>
-    <div className='text-red-600 m-4'>
-        {/* <p>{err}</p> */}
+// {/* <form onSubmit={handleSubmit} className="card-body lg:w-96">
+//     <div className="form-control">
+//         <label className="label">
+//             <span className="label-text">Email</span>
+//         </label>
+//         <input name='email' type="email" placeholder="email" className="input input-bordered" />
 //     </div>
-//     <div className="form-control mt-6">
-//         <button className="btn btn-primary">
-//             Sign in
-//         </button>
+//     <div className="form-control">
+//         <label className="label">
+//             <span className="label-text">Password</span>
+//         </label>
+//         <input name='password' type="password" placeholder="password" className="input input-bordered" />
 //     </div>
-// </form> */}
+//     <div className='text-sm '>
+//         <p>New to our website?</p> <p className='text-primary pt-5 hover:link   ' ><Link className='animate-pulse text-2xl ' to='/signup'>Register now</Link></p>
+//     </div>
+//     <div className='text-red-600 m-4'>
+//         {/* <p>{err}</p> */}
+// //     </div>
+// //     <div className="form-control mt-6">
+// //         <button className="btn btn-primary">
+// //             Sign in
+// //         </button>
+// //     </div>
+// // </form> */}

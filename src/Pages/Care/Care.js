@@ -83,7 +83,7 @@ const Care = () => {
                     data-aos-easing="linear"
                     data-aos-duration="500"
                 >
-                    <h1 className='text-4xl text-primary text-center font-semibold'>Our heros</h1>
+                    <h1 className='text-6xl font-bold text-primary text-center'>Our heros</h1>
                 </div>
                 <div className='mt-10'>
                     <div className='grid lg:grid-cols-3 justify-items-center  gap-5 lg:scale-90 md:grid-cols-2 grid-cols-1'>

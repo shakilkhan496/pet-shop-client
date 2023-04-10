@@ -1,4 +1,3 @@
-import { useQuery } from '@tanstack/react-query';
 import { getAuth, updateProfile } from 'firebase/auth';
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth'
 import React from 'react';
@@ -12,9 +11,22 @@ const auth = getAuth(app);
 export const AuthContext = createContext();
 const googleProvider = new GoogleAuthProvider();
 
+
+
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState('');
     const [loading, setLoading] = useState(true);
+
+    const [cart, setCart] = useState({});
+
+    const cartData = {
+        email: user?.email,
+        productId: cart._id,
+        title: cart.title,
+        price: cart.price,
+        img: cart.img,
+        id: cart._id,
+    };
 
     const emailSignIn = (email, password) => {
         setLoading(true);
@@ -70,7 +82,7 @@ const AuthProvider = ({ children }) => {
         googleSignIn,
         createUser,
         updateUserProfile, payPrice, setPayPrice,
-        cartLength, setCartLength
+        cartLength, setCartLength, setCart, cartData
 
 
     }

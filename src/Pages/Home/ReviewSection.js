@@ -4,6 +4,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper";
 import './Style.css';
+import { PhotoView } from 'react-photo-view';
 
 const ReviewSection = () => {
     return (
@@ -144,10 +145,12 @@ const ReviewSection = () => {
 
                     <div class="mb-12 px-10 py-10 md:mb-0 rounded-3xl hover:scale-110 transition duration-500">
                         <div class="flex mb-6">
-                            <img style={{ width: '80px' }} alt=''
-                                src="https://i.ibb.co/wwqRTxm/324242245-5753007051472731-2071802468658842700-n-cropped.png"
-                                className="rounded-full shadow-lg ring-4 ring-offset-2 ring-amber-400 mt-3"
-                            />
+                            <PhotoView src='https://i.ibb.co/wwqRTxm/324242245-5753007051472731-2071802468658842700-n-cropped.png'>
+                                <img style={{ width: '80px' }} alt=''
+                                    src="https://i.ibb.co/wwqRTxm/324242245-5753007051472731-2071802468658842700-n-cropped.png"
+                                    className="rounded-full shadow-lg ring-4 ring-offset-2 ring-amber-400 mt-3"
+                                />
+                            </PhotoView>
                         </div>
                         <h5 class="text-2xl font-semibold mb-4">Shakil Khan</h5>
                         <h6 class="font-semibold text-primary mb-4">Web Developer</h6>

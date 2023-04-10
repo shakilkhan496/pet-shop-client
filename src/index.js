@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import 'react-day-picker/dist/style.css';
 import AuthProvider from './contexts/AuthProvider';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { PhotoProvider } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 
 const queryClient = new QueryClient();
@@ -15,7 +17,9 @@ root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
-        <App />
+        <PhotoProvider>
+          <App />
+        </PhotoProvider>
       </AuthProvider>
     </QueryClientProvider>
   </React.StrictMode>

@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Loading from '../../components/Loading/Loading';
 import { AuthContext } from '../../contexts/AuthProvider';
 import useAdmin from '../../hooks/useAdmin';
+import { PhotoView } from 'react-photo-view';
 
 
 const Food = () => {
@@ -97,10 +98,14 @@ const Food = () => {
 
 
 
-                                        key={idx} className="card lg:w-[300px] lg:h-[400px] lg:scale-75 scale-90 bg-base-100 shadow-xl">
-                                        <figure><img
+                                        key={idx} className="card lg:w-[300px] lg:h-[500px] lg:scale-90 scale-90 bg-base-100 shadow-xl">
+                                        <figure>
+                                            <PhotoView src={food.img}>
+                                                <img
 
-                                            className='lg:h-[200px] h-[200px]' src={food.img} alt="Shoes" /></figure>
+                                                    className='lg:h-[200px] h-[200px]' src={food.img} alt="Shoes" />
+                                            </PhotoView>
+                                        </figure>
                                         <div className="card-body hover:scale-110 transition">
                                             <h2 className="card-title text-2xl">
                                                 {food.title}

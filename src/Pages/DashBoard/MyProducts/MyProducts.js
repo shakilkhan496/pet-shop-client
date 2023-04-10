@@ -46,8 +46,8 @@ const MyProducts = () => {
 
     return (
         <div className='space-y-5'>
-            <h1 className='mt-5 text-4xl text-primary'>Product vs Price chart</h1>
-            <div className='w-[500px] h-[500px]'>
+            <h1 className='mt-5 text-4xl font-bold text-primary'>Product vs Price chart</h1>
+            <div className='min-w-full sm-ml-[0px] md-ml-[0px] ml-[130px] h-[500px]'>
                 <ResponsiveContainer width={700} height="80%">
                     <LineChart
 
@@ -63,9 +63,9 @@ const MyProducts = () => {
 
                     </LineChart>
                 </ResponsiveContainer>
-                <p className='text-center text-2xl py-10'>Total price: {
+                <p className='text-center text-white bg-[#4b0079] inline-block font-bold text-2xl p-5 rounded-t-[40px]'>Total price: {
                     myProducts.reduce((a, b) => a + b.price, 0)
-                }</p>
+                }$</p>
             </div>
 
             <div className='text-xl font-bold p-5'>
@@ -121,13 +121,13 @@ const MyProducts = () => {
                                             <td>
                                                 <p>{myProduct.title}</p>
                                             </td>
-                                            <td>{myProduct.price}</td>
+                                            <td className='font-bold'>{myProduct.price}$</td>
 
 
                                             <th>
                                                 <button
                                                     onClick={() => handleDelete(myProduct._id)}
-                                                    className="btn bg-primary btn-ghost btn-xs px-4 text-white  ">Delete</button>
+                                                    className="btn bg-[#4b0079] btn-ghost btn-xs px-4 text-white  ">Delete</button>
                                             </th>
 
                                         </tr>)

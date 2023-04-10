@@ -5,6 +5,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 import useAdmin from '../../hooks/useAdmin';
 
+
 const FoodDetails = () => {
     const foodData = useLoaderData();
     const { user, logOut } = useContext(AuthContext);

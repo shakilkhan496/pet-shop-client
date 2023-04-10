@@ -63,7 +63,7 @@ const AddProducts = () => {
                     })
 
 
-            }).catch(err => console.log(err));
+            }).catch(err => toast.error(`${err}`));
     }
 
 

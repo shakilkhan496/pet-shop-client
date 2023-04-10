@@ -7,12 +7,12 @@ import './Style.css';
 
 const ReviewSection = () => {
     return (
-        <div className='min-h-screen review-bg hidden lg:block'>
-            <h1 className='text-5xl text-center  text-white font-bold py-20'>Customers Reviews</h1>
+        <div className=' review-bg hidden lg:block'>
+            <h1 className='text-5xl text-center  text-white font-bold py-20'>Customer's Reviews</h1>
             <Swiper
-                data-aos="zoom-in"
+                data-aos="fade-right"
                 data-aos-easing="linear"
-                data-aos-duration="700"
+                data-aos-duration="500"
                 style={{
                     padding: '0 50px'
                 }}
@@ -142,16 +142,16 @@ const ReviewSection = () => {
                 </SwiperSlide>
                 <SwiperSlide className='cursor-grab  transition duration-700'>
 
-                    <div class="mb-12 py-10 md:mb-0 rounded-3xl hover:scale-110 transition duration-500">
+                    <div class="mb-12 px-10 py-10 md:mb-0 rounded-3xl hover:scale-110 transition duration-500">
                         <div class="flex mb-6">
                             <img style={{ width: '80px' }} alt=''
-                                src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg"
+                                src="https://i.ibb.co/wwqRTxm/324242245-5753007051472731-2071802468658842700-n-cropped.png"
                                 className="rounded-full shadow-lg ring-4 ring-offset-2 ring-amber-400 mt-3"
                             />
                         </div>
-                        <h5 class="text-2xl font-semibold mb-4">Maria Smantha</h5>
+                        <h5 class="text-2xl font-semibold mb-4">Shakil Khan</h5>
                         <h6 class="font-semibold text-primary mb-4">Web Developer</h6>
-                        <p class="mb-4">
+                        <p class="mb-4 ">
                             <svg
                                 aria-hidden="true"
                                 focusable="false"
@@ -167,8 +167,7 @@ const ReviewSection = () => {
                                     d="M464 256h-80v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8c-88.4 0-160 71.6-160 160v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48zm-288 0H96v-64c0-35.3 28.7-64 64-64h8c13.3 0 24-10.7 24-24V56c0-13.3-10.7-24-24-24h-8C71.6 32 0 103.6 0 192v240c0 26.5 21.5 48 48 48h128c26.5 0 48-21.5 48-48V304c0-26.5-21.5-48-48-48z"
                                 ></path>
                             </svg>
-                            Lorem ipsum dolor sit amet, consectetur <br /> adipisicing elit. Quod eos id officiis hic
-                            <br />   tenetur quae quaerat ad velit ab hic tenetur.
+                            Great pet shop! Friendly staff, clean store, wide selection of products. Highly recommend for all pet needs.
                         </p>
                         <ul class="flex  mb-0">
                             <li>

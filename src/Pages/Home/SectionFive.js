@@ -12,9 +12,7 @@ const SectionFive = () => {
     return (
         <div className='lg:flex p-10'>
             <section
-                data-aos="zoom-in"
-                data-aos-easing="linear"
-                data-aos-duration="700"
+
                 className='flex-1'>
                 <div className='lg:translate-x-[200px] mb-10 lg:translate-y-[220px]'>
                     <h1

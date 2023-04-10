@@ -1,7 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useState } from 'react';
 import { useContext } from 'react';
-import { useEffect } from 'react';
 import { toast } from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import Loading from '../../components/Loading/Loading';

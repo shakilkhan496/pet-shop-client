@@ -1,10 +1,20 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import logoo from '.././assets/vector/s shape.png';
+import './NavBar.css';
 
 const Footer = () => {
     return (
-        <footer className="footer grid-rows-2 p-10 pl-[250px] bg-black  text-neutral-content">
-            <div>
-                <h1 className='text-4xl'>PetShop</h1>
+        <footer
+            data-aos="fade-right"
+            data-aos-easing="linear"
+            data-aos-duration="100"
+            className="footer rounded-tr-[200px] grid-rows-2 p-10 pl-[250px] bg-black  text-neutral-content">
+            <div className='flex items-center justify-center'>
+                <div className='flex img'>
+                    <img className='w-16 -rotate-90 translate-x-4' src={logoo} alt="" />
+                </div>
+                <Link to='/' class="hover:scale-105 py-1 nav-title-text hover:skew-x-6 transition normal-case  text-[40px] font-extrabold">PetShop</Link>
             </div>
             <div>
                 <span className="footer-title">Company</span>

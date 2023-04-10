@@ -12,9 +12,7 @@ const SectionThree = () => {
 
             className='py-10'>
             <div
-                data-aos="zoom-in"
-                data-aos-easing="linear"
-                data-aos-duration="700"
+
                 className="hero">
                 <div className="hero-content justify-center items-center flex-col lg:flex-row-reverse">
                     <div className='flex-1 lg:flex  items-center justify-center'>

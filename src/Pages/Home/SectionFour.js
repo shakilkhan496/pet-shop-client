@@ -18,9 +18,7 @@ const SectionFour = () => {
     return (
         <div className='lg:flex p-10'>
             <section
-                data-aos="zoom-in"
-                data-aos-easing="linear"
-                data-aos-duration="700"
+
                 className='flex-1 mb-10 lg:scale-75 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5'>
                 <div>
                     <div

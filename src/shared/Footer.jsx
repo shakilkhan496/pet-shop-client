@@ -6,9 +6,7 @@ import './NavBar.css';
 const Footer = () => {
     return (
         <footer
-            data-aos="fade-right"
-            data-aos-easing="linear"
-            data-aos-duration="100"
+
             className="footer rounded-tr-[200px] grid-rows-2 p-10 pl-[250px] bg-black  text-neutral-content">
             <div className='flex items-center justify-center'>
                 <div className='flex img'>

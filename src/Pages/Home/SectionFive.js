@@ -30,9 +30,7 @@ const SectionFive = () => {
 
             </section>
             <section
-                data-aos="zoom-in"
-                data-aos-easing="linear"
-                data-aos-duration="700"
+
                 className='flex-1 lg:scale-75 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5'>
                 <div>
                     <div className="hero hover:scale-110 transition duration-700 rounded-3xl w-full " style={{ backgroundImage: `url('${food1}')` }}>

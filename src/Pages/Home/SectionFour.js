@@ -22,9 +22,7 @@ const SectionFour = () => {
                 className='flex-1 mb-10 lg:scale-75 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5'>
                 <div>
                     <div
-                        data-aos="zoom-in"
-                        data-aos-easing="linear"
-                        data-aos-duration="500"
+
                         className="hero hover:scale-110 transition duration-700 rounded-3xl h-full " style={{ backgroundImage: `url('${img1}')` }}>
                         <div className="hero-overlay bg-opacity-60"></div>
                         <div className=" text-center text-neutral-content">
@@ -41,9 +39,7 @@ const SectionFour = () => {
 
                 <div>
                     <div
-                        data-aos="zoom-in"
-                        data-aos-easing="linear"
-                        data-aos-duration="500"
+
                         className="hero hover:scale-110 transition duration-700 rounded-3xl " style={{ backgroundImage: `url('${img2}')` }}>
                         <div className="hero-overlay bg-opacity-60"></div>
                         <div className=" text-center text-neutral-content">
@@ -60,9 +56,7 @@ const SectionFour = () => {
 
                 <div>
                     <div
-                        data-aos="zoom-in"
-                        data-aos-easing="linear"
-                        data-aos-duration="500"
+
                         className="hero hover:scale-110 transition duration-700 rounded-3xl" style={{ backgroundImage: `url('${img3}')` }}>
                         <div className="hero-overlay bg-opacity-60"></div>
                         <div className=" text-center text-neutral-content">
@@ -79,9 +73,7 @@ const SectionFour = () => {
 
                 <div>
                     <div
-                        data-aos="zoom-in"
-                        data-aos-easing="linear"
-                        data-aos-duration="500"
+
                         className="hero hover:scale-110 transition duration-700 rounded-3xl" style={{ backgroundImage: `url('${img4}')` }}>
                         <div className="hero-overlay bg-opacity-60"></div>
                         <div className=" text-center text-neutral-content">
@@ -98,9 +90,7 @@ const SectionFour = () => {
 
                 <div>
                     <div
-                        data-aos="zoom-in"
-                        data-aos-easing="linear"
-                        data-aos-duration="500"
+
                         className="hero hover:scale-110 transition duration-700 rounded-3xl" style={{ backgroundImage: `url('${img1}')` }}>
                         <div className="hero-overlay bg-opacity-60"></div>
                         <div className=" text-center text-neutral-content">
@@ -117,18 +107,14 @@ const SectionFour = () => {
 
             </section>
             <section
-                data-aos="zoom-in"
-                data-aos-easing="linear"
-                data-aos-duration="700"
+
                 className='flex-1 flex flex-col items-center justify-center lg:p-10'>
                 <div className='space-y-10'>
                     <h1
 
                         className=' lg:text-7xl hover:-skew-x-6 hover:translate-x-3 transition duration-500 text-5xl font-bold text-primary'>Pet Hotel</h1>
                     <p
-                        data-aos="zoom-in"
-                        data-aos-easing="linear"
-                        data-aos-duration="500"
+
                         className='text-xl font-semibold'>A cozy hotel for your pet. <br /> We bet they’re not gonna miss you</p>
                 </div>
                 <div className='mt-10'>

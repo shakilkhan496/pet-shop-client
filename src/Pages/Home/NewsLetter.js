@@ -55,9 +55,8 @@ const NewsLetter = () => {
 
                 className='newsLetter-bg flex h-[400px]'>
                 <div
-                    data-aos="zoom-in"
-                    data-aos-easing=""
-                    data-aos-duration="200"
+
+
                     className='flex-1 px-3 lg:ml-[100px] flex flex-col items-center justify-center'>
                     <h1 className='lg:text-4xl text-3xl text-center text-black'>Subscribe to our Newsletter</h1>
                     <h1 className='lg:text-5xl text-4xl font-bold text-center text-black'>For our Promos and Benefits</h1>

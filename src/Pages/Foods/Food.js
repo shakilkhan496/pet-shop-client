@@ -80,9 +80,7 @@ const Food = () => {
     return (
         <div className='min-h-screen'>
             <div
-                data-aos="zoom-in"
-                data-aos-easing="linear"
-                data-aos-duration="200"
+
             >
                 <div>
 

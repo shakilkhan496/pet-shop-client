@@ -41,9 +41,7 @@ const SectionThree = () => {
                             }}
                             className="text-7xl hover:-skew-x-6 hover:translate-x-6 text-[#41EAC1] font-bold">Grooming</h1>
                         <p
-                            data-aos="zoom-in"
-                            data-aos-easing="linear"
-                            data-aos-duration="200"
+
                             className="py-6 text-xl">However not all animals enjoy the grooming <br /> process and many owners find that it <br /> is easier to send their pet to a <br /> professional groomer on a regular basis instead.</p>
                         <label
 

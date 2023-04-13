@@ -47,7 +47,7 @@ const NavBar = () => {
 
 
 
-    const { data: myCart = [], refetch } = useQuery({
+    const { data: myCart = [], } = useQuery({
         queryKey: ['myCart'],
         queryFn: () => fetch(`https://pet-shop-server.vercel.app/cart?email=${user.email}`, {
             headers: {
@@ -104,7 +104,7 @@ const NavBar = () => {
     </>
     return (
         <div
-            style={{ backdropFilter: 'blur(5px)' }} className=' from-secondary to-transparent  sticky top-0 z-50 '>
+            style={{ backdropFilter: 'blur(8px)' }} className=' from-[#e3a9f23c] to-[#ffc35c43] bg-gradient-to-r  sticky top-0 z-50 '>
             <nav className='hidden  lg:block shadow'>
                 <div class="flex items-center px-10 justify-between ">
                     {title}

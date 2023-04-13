@@ -10,7 +10,7 @@ import SectionTwo from './SectionTwo';
 
 const Home = () => {
     return (
-        <div>
+        <div className='bg-base-100'>
             <Header></Header>
             <SectionOne></SectionOne>
             <SectionTwo></SectionTwo>

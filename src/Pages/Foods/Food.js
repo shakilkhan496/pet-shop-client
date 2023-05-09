@@ -100,7 +100,7 @@ const Food = () => {
 
 
 
-                                        key={idx} className="card lg:w-[300px] lg:h-[500px] lg:scale-90 scale-90 bg-base-100 shadow-xl">
+                                        key={idx} className="card lg:w-[300px] lg:h-[500px] lg:scale-75 scale-90 bg-base-100 shadow-xl">
                                         <figure>
                                             <PhotoView src={food.img}>
                                                 <img

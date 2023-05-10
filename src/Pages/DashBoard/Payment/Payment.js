@@ -28,8 +28,8 @@ const Payment = () => {
 
             <div className='px-5 lg:w-2/3 lg:mx-auto mx-5 rounded-xl  mt-10 shadow-xl py-10'>
                 <Elements stripe={stripePromise}>
-                    {/* <CheckOut paymentData={paymentData}></CheckOut> */}
-                    <Subscription></Subscription>
+                    <CheckOut paymentData={paymentData}></CheckOut>
+                    {/* <Subscription></Subscription> */}
                 </Elements>
             </div>
 

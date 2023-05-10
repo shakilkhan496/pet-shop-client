@@ -77,7 +77,7 @@ function Subscription() {
             />
 
             <CardElement />
-            <button className="btn" onClick={createSubscription} disabled={!stripe}>
+            <button className="btn bg-red-300" onClick={createSubscription} disabled={!stripe}>
                 Subscribe
             </button>
         </div>
